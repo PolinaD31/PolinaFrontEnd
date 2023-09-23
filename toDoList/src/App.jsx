@@ -2,10 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [info, setInfo] = useState({
-    todo: "",
-    date: "",
-  });
+  const [info, setInfo] = useState({desc: "", date: ""});
   const [todos, setTodos] = useState([]);
 
 
@@ -17,11 +14,12 @@ function App() {
 
   const addTodo = (event) => {
     event.preventDefault();
-    const putTodo = {
-      todo: info.todo,
-      date: info.date,
-    }
-    setTodos([...todos, putTodo]);
+    setTodos([...todos, info]);
+  }
+
+  const deleteTodo = (index) => {
+    const newTodos = todos.filter((todo, i) => i !== index);
+    setTodos(newTodos);
   }
 
   return (
@@ -48,6 +46,7 @@ function App() {
           <tr key={index}>
             <td>{todo.date}</td>
             <td>{todo.todo}</td>
+            <td><button onClick={() => deleteTodo(index)}>Delete</button></td>
             </tr>)
         }
         </tbody>
