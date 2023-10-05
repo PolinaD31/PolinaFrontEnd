@@ -2,7 +2,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 
@@ -28,7 +27,6 @@
 .read-the-docs {
   color: #888;
 }
-
 table {
   margin: auto;
   border-collapse: collapse;
@@ -55,6 +53,12 @@ h3 {
   cursor: pointer;
 }
 
+button {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -70,5 +74,7 @@ h3 {
 .bold {
   font-weight: bold;
 }
+
+
 
 
